@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/add', function () {
-    return view('add');
-});
+Route::get('/', 'BookController@index')->name('home');
+Route::get('/add', 'BookController@add')->name('add');
+Route::post('/add', 'BookController@create')->name('create');
 
 Route::get('/edit', function () {
     return view('edit');
