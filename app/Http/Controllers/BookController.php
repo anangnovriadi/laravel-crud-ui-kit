@@ -33,15 +33,33 @@ class BookController extends Controller
         return redirect()->route('home');
     }
 
-    public function edit() {
+    public function edit($id) {
+        $books = Book::findOrFail($id);
 
+        return view('edit', compact('books'));
     }
 
-    public function update() {
+    public function update($id, Request $request) {
+        $name = $request->name;
+        $author = $request->author;
+        $description = $request->description;
 
+        $book = Book::find($id);
+
+        $book->update([
+            'name' => $name,
+            'author' => $author,
+            'description' => $description
+        ]);
+
+        return redirect()->route('home');
     }
 
-    public function delete() {
+    public function delete($id) {
+        $book = Book::find($id);
 
+        $book->delete();
+        
+        return redirect()->route('home');
     }
 }

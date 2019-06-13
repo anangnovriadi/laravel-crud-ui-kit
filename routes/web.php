@@ -14,7 +14,10 @@
 Route::get('/', 'BookController@index')->name('home');
 Route::get('/add', 'BookController@add')->name('add');
 Route::post('/add', 'BookController@create')->name('create');
+Route::get('/edit/{id}', 'BookController@edit')->name('edit');
+Route::patch('/update/{id}', 'BookController@update')->name('update');
+Route::delete('/delete/{id}', 'BookController@delete')->name('delete');
 
-Route::get('/edit', function () {
-    return view('edit');
-});
+// Route::get('/edit', function () {
+//     return view('edit');
+// });

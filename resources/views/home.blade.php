@@ -11,9 +11,23 @@
                     <div class="uk-card uk-card-default uk-card-hover uk-card-body">
                         <h3 class="uk-card-title">{{ $book->name }}</h3>
                         <p>{{ $book->description }}</p>
-                        <div class="uk-flex-center">
-                            <a href="" uk-icon="icon: file-edit"></a>
-                            <a href="" uk-icon="icon: trash"></a>
+                        <div class="uk-grid uk-child-width-expand uk-text-center">
+                            <div>
+                                <a href="{{ route('edit', $book->id) }}">
+                                    <span uk-icon="icon: file-edit"></span>
+                                    <span>Edit</span>
+                                </a>
+                            </div>
+                            <div>
+                                <form method="POST" action="{{ route('delete', $book->id) }}">
+                                    {{ csrf_field()}}
+                                    {{  method_field('DELETE') }}
+                                    <button style="text-decoration: none; background: transparent; border: none; cursor: pointer;" type="submit">
+                                        <span uk-icon="icon: trash"></span>
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
