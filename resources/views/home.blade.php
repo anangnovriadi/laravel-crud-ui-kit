@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="uk-margin-bottom">
-        <button class="uk-button uk-button-primary"><span uk-icon="icon: plus-circle"></span> Add Book</button>
+        <button class="uk-button uk-button-primary"><a href="/add" uk-icon="icon: plus-circle"></a> Add Book</button>
     </div>
     <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
         <div>
