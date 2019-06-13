@@ -10,7 +10,9 @@
 <body>
     @include('layout.header')
 
-    @yield('content')
+    <div class="uk-container uk-margin-medium">
+        @yield('content')
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
